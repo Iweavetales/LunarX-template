@@ -1,0 +1,29 @@
+{
+  "name": "swift",
+  "scripts": {
+    "build": "node ./packages/LunarGate/ApplicationBuilder/dist/builder.js --enable-source-maps",
+    "escape-lightningcss-error": "CSS_TRANSFORMER_WASM=false",
+    "build:builder": "npm run escape-lightningcss-error &&  esbuild packages/LunarGate/ApplicationBuilder/src/index.ts --bundle --platform=node --outfile=packages/LunarGate/ApplicationBuilder/dist/builder.js --external:esbuild   --sourcemap=external   --external:@swc --loader:.node=file",
+    "build:app:dev:watch": "run-p build:app:dev:watch:*",
+    "build:app:dev:watch:app": "NODE_ENV=development npm run build:builder && env NODE_ENV=development node packages/LunarGate/ApplicationBuilder/dist/builder.js --enable-source-maps",
+    "build:app:dev:watch:comment": "# Application Builder 를 빌드하고 앱을 증분 빌드 시작",
+    "build:app:prd": "npm run build:builder && env NODE_ENV=production node packages/LunarGate/ApplicationBuilder/dist/builder.js --enable-source-maps",
+    "deno-runtime-fmt": "deno fmt ./packages/LunarGate/denoRuntime/",
+    "deno-runtime-lint": "deno lint ./packages/LunarGate/denoRuntime/",
+    "deno-runtime": "NODE_ENV=development deno run --allow-all packages/LunarGate/denoRuntime/index.ts ",
+    "build:deno-runtime": "deno bundle ./packages/LunarGate/denoRuntime/index.ts ./packages/LunarGate/denoRuntime/dist.js"
+  },
+  "dependencies": {
+    "lunargate-test-helloworld3": "^0.1.46",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.4.1",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5"
+  }
+}
