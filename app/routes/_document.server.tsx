@@ -4,7 +4,7 @@ import { Bootstrap, DocumentLinks, DocumentScripts } from 'lunargate-test-hellow
 import reactDomServer from 'react-dom/server';
 // import { ServerStyleSheet } from 'styled-components';
 
-export default async function (context: LunarContext, res: Response, App: () => React.ReactElement) {
+export default async function (context: LunarContext, res: Response, Main: () => React.ReactElement) {
   // const sheet = new ServerStyleSheet();
   // const appMarkup = reactDomServer.renderToString(sheet.collectStyles(<App />));
   // const appMarkup = reactDomServer.renderToString(<App />);
@@ -23,9 +23,7 @@ export default async function (context: LunarContext, res: Response, App: () => 
         {/*{sheet.getStyleElement()}*/}
       </head>
       <body>
-        <App />
-        {/*<div id="app" dangerouslySetInnerHTML={{ __html: appMarkup }}></div>*/}
-
+        <Main />
       </body>
     </html>
   );
