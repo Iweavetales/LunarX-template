@@ -7,7 +7,7 @@ import reactDomServer from 'react-dom/server';
 export default async function (context: LunarContext, res: Response, App: () => React.ReactElement) {
   // const sheet = new ServerStyleSheet();
   // const appMarkup = reactDomServer.renderToString(sheet.collectStyles(<App />));
-  const appMarkup = reactDomServer.renderToString(<App />);
+  // const appMarkup = reactDomServer.renderToString(<App />);
 
   return (
     <html>
@@ -23,9 +23,9 @@ export default async function (context: LunarContext, res: Response, App: () => 
         {/*{sheet.getStyleElement()}*/}
       </head>
       <body>
-        <div id="app" dangerouslySetInnerHTML={{ __html: appMarkup }}></div>
+        <App />
+        {/*<div id="app" dangerouslySetInnerHTML={{ __html: appMarkup }}></div>*/}
 
-        <Bootstrap />
       </body>
     </html>
   );

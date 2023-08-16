@@ -14,7 +14,7 @@
     "build:deno-runtime": "deno bundle ./packages/LunarGate/denoRuntime/index.ts ./packages/LunarGate/denoRuntime/dist.js"
   },
   "dependencies": {
-    "lunargate-test-helloworld3": "^0.1.46",
+    "lunargate-test-helloworld3": "^0.1.56",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router": "^6.3.0",
