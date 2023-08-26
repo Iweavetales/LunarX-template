@@ -1,13 +1,12 @@
-import { LunarContext } from 'lunargate-test-helloworld3/lunarContext';
+import { LunarContext } from 'lunarx/context';
 import React, { StrictMode } from 'react';
-import { Bootstrap, DocumentLinks, DocumentScripts } from 'lunargate-test-helloworld3/document';
+import { Bootstrap, DocumentLinks, DocumentScripts } from 'lunarx/document';
 import reactDomServer from 'react-dom/server';
-// import { ServerStyleSheet } from 'styled-components';
+import { ServerStyleSheet } from 'styled-components';
 
 export default async function (context: LunarContext, res: Response, Main: () => React.ReactElement) {
-  // const sheet = new ServerStyleSheet();
-  // const appMarkup = reactDomServer.renderToString(sheet.collectStyles(<App />));
-  // const appMarkup = reactDomServer.renderToString(<App />);
+  const sheet = new ServerStyleSheet();
+  let StyledMain = sheet.collectStyles(<Main />)
 
   return (
     <html>
@@ -20,10 +19,10 @@ export default async function (context: LunarContext, res: Response, Main: () =>
         <DocumentLinks />
 
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        {/*{sheet.getStyleElement()}*/}
+        {sheet.getStyleElement()}
       </head>
       <body>
-        <Main />
+      {StyledMain}
       </body>
     </html>
   );

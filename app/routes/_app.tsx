@@ -1,6 +1,6 @@
-import { SwiftRenderer } from 'lunargate-test-helloworld3/lunarApp';
+import { SwiftRenderer } from 'lunarx/app';
 import React from 'react';
-import { useServerFetches } from 'lunargate-test-helloworld3/serverFetches';
+import { useServerFetches } from 'lunarx/ssfetch';
 export default () => {
   const fetches = useServerFetches();
 

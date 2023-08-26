@@ -1,19 +1,20 @@
-import React from 'react';
+import React from "react"
 //
-import { Outlet } from 'react-router';
-import { Link } from 'lunargate-test-helloworld3/router';
+import { Outlet } from "react-router"
+import { Link } from "lunarx/router"
 // import { useServerFetches } from '../swift2/serverFetches';
-import LunarLogo from "../assets/svg/LunarLogo.svg"
-export default function IndexPage() {
-  // const serverFetches = useServerFetches();
+export default function AboutPage() {
+    // const serverFetches = useServerFetches();
 
-  return (
-    <div>
-        <img src={"/static/svg/LunarLogo.svg"} width={100}/>
-
-      LunarGate About
-      <Link href={'/'}>To Index</Link>
-      <Outlet />
-    </div>
-  );
+    return (
+        <div>
+            <div style={{ textAlign: "center" }}>
+                <div>About LunarX</div>
+                <div>
+                    <Link href={"/"}>To Index</Link>s
+                </div>
+                <Outlet />
+            </div>
+        </div>
+    )
 }
