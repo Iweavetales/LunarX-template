@@ -1,10 +1,9 @@
-import { LunarContext } from 'lunarx/context';
-import React, { StrictMode } from 'react';
-import { Bootstrap, DocumentLinks, DocumentScripts } from 'lunarx/document';
-import reactDomServer from 'react-dom/server';
+import { ServerContext } from 'lunarx/context';
+import React from 'react';
+import {  DocumentLinks, DocumentScripts } from 'lunarx/document';
 import { ServerStyleSheet } from 'styled-components';
 
-export default async function (context: LunarContext, Main: () => React.ReactElement) {
+export default async function (context: ServerContext, Main: () => React.ReactElement) {
   const sheet = new ServerStyleSheet();
   let StyledMain = sheet.collectStyles(<Main />)
 

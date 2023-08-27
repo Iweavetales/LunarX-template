@@ -4,7 +4,7 @@ import { Outlet } from "react-router"
 import { Link } from "lunarx/router"
 import styled from "styled-components";
 import {Column} from "../src/styles/test.css";
-// import { useServerFetches } from '../swift2/serverFetches';
+import {useServerFetches} from "lunarx/ssfetch";
 
 let EmblemImg = styled.img`
   width: 200px;
@@ -12,7 +12,8 @@ let EmblemImg = styled.img`
 
 
 export default function IndexPage() {
-    // const serverFetches = useServerFetches(); ssssss
+    const serverFetches = useServerFetches();
+    console.log(serverFetches)
 
     return (
         <div>
