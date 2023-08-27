@@ -2,13 +2,8 @@ import React from "react"
 //
 import { Outlet } from "react-router"
 import { Link } from "lunarx/router"
-import styled from "styled-components";
 import {Column} from "../src/styles/test.css";
 import {useServerFetches} from "lunarx/ssfetch";
-
-let EmblemImg = styled.img`
-  width: 200px;
-`
 
 
 export default function IndexPage() {
@@ -20,7 +15,7 @@ export default function IndexPage() {
             <div className={Column} style={{ textAlign: "center" }}>
                 <div style={{ display: "flex", flexDirection: "column" }}>
                     <div style={{ padding: 30 }}>
-                        <EmblemImg src={"/static/svg/emblem_symbol_only.svg"}   />
+                        <img width={200} src={"/static/svg/emblem_symbol_only.svg"}   />
                     </div>
 
                     <div
