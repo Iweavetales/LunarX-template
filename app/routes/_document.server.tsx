@@ -2,10 +2,11 @@ import { ServerContext } from 'lunarx/context';
 import React from 'react';
 import {  DocumentLinks, DocumentScripts } from 'lunarx/document';
 import { ServerStyleSheet } from 'styled-components';
+import {renderToString} from "react-dom/server";
 
 export default async function (context: ServerContext, Main: () => React.ReactElement) {
   const sheet = new ServerStyleSheet();
-  let StyledMain = sheet.collectStyles(<Main />)
+  const html = renderToString(sheet.collectStyles(<Main />));
 
   return (
     <html>
@@ -20,9 +21,7 @@ export default async function (context: ServerContext, Main: () => React.ReactEl
         <script src="https://accounts.google.com/gsi/client" async defer></script>
         {sheet.getStyleElement()}
       </head>
-      <body>
-      {StyledMain}
-      </body>
+      <body dangerouslySetInnerHTML={{ __html: html }} />
     </html>
   );
 }
