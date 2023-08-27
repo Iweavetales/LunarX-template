@@ -4,7 +4,7 @@ import { Bootstrap, DocumentLinks, DocumentScripts } from 'lunarx/document';
 import reactDomServer from 'react-dom/server';
 import { ServerStyleSheet } from 'styled-components';
 
-export default async function (context: LunarContext, res: Response, Main: () => React.ReactElement) {
+export default async function (context: LunarContext, Main: () => React.ReactElement) {
   const sheet = new ServerStyleSheet();
   let StyledMain = sheet.collectStyles(<Main />)
 
