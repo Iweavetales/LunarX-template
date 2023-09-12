@@ -1,4 +1,4 @@
-import { ServerContext } from 'lunarx/context';
+import { ServerContext } from 'lunarx/server';
 export async function serverFetches(ctx: ServerContext) {
   // /client-session/info
 

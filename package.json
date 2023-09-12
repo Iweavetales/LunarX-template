@@ -1,5 +1,5 @@
 {
-  "name": "lunar-example-basic",
+  "name": "lunarx-example-basic",
   "scripts": {
     "dev": "lunar dev",
     "build": "lunar build",
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@vanilla-extract/css": "^1.13.0",
-    "lunarx": "^0.1.15",
+    "lunarx": "^0.2.4",
     "react": "^18.2.0",
     "react-router": "^6.15.0",
     "react-router-dom": "^6.15.0",
