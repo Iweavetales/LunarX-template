@@ -1,22 +1,20 @@
-import { ServerContext } from 'lunarx/server';
-import React from 'react';
-import {DocumentLinks, DocumentScripts, Head} from 'lunarx/document';
+import React from "react"
+import { ServerContext } from "lunarx/server"
+import { Body, Head } from "lunarx/document"
 
-export default async function (context: ServerContext, Main: () => React.ReactElement) {
-
-
+export default async function (
+  context: ServerContext,
+  Main: () => React.ReactElement
+) {
   return (
     <html>
-      <Head>
-        <title>LunarX</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="charset" content="utf-8" />
-
-        <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <Head activatePrefetch={false}>
+        <title>LunarJS</title>
       </Head>
-      <body>
-        <Main/>
-      </body>
+
+      <Body autoLoadAllLeftResources={false}>
+        <Main />
+      </Body>
     </html>
-  );
+  )
 }
